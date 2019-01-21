@@ -1,5 +1,8 @@
 # Wrench
 
+## Current Release
+[Release V.0.9](https://github.com/ltchurch88t/Wrench/releases/tag/0.9)
+
 ## For development follow these steps:
 - Fork repo
 - Clone files locally
