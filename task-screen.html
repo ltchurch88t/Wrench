@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Speak Dev Environment</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/xterm/dist/xterm.css" />
+    <link rel="stylesheet" href="node_modules/xterm/dist/addons/fullscreen/fullscreen.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+    <script src="node_modules/xterm/dist/xterm.js"></script>
+    <script src="node_modules/xterm/dist/addons/fit/fit.js"></script>
+    <script src="node_modules/xterm/dist/addons/attach/attach.js"></script>
+    <script src="node_modules/xterm/dist/addons/winptyCompat/winptyCompat.js"></script>
+    <link href="CSS/master.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="tasks">
+    <div class="drag"></div>
+    <div class="main">
+      <div class="side-nav">
+        <a class="nav-btn" onclick="killProcess();" href="index.html"><i class="fa fa-angle-left"></i></a>
+          <div class="icon-container">
+            <a onclick="cacheBust();" title="Cache Bust" id="trash"></a>
+            <a onclick="gitPushCommit();" title="Git Push" id="upload"></a>
+            <a onclick="gitPull();" title="Git Pull" id="download"></a>
+          </div>
+        <div class="input-container">
+          <label class="add-btn" for="file-chooser"><i class="fa fa-plus"></i></label>
+          <input type="file" name="file-chooser" onchange="setPath();" id="file-chooser" webkitdirectory class="inputfile" />
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="flex flex-column sidebar-content tl">
+          <div class="site-container tl">
+            <h2 class="site-title tl" id="site-title"></h2>
+          </div>
+          <div class="info-container tl" id="info-container">
+          </div>
+        </div>
+        <img class="logo" src="CSS/images/sw-logo-white.png"/>
+      </div>
+      <div class="content">
+        <div class="title-container">
+          <h2 id="main-title"></h2>
+          <div class="icon-container">
+            <a id="start-btn" onclick="sendCommand();"><i class="fa fa-play"></i></a>
+            <a id="stop-btn" onclick="killProcess();"><i class="fas fa-stop"></i></a>
+            <a id="editConfig" onclick="configOptions();"><i class="fas fa-list-ul"></i></a>
+          </div>
+        </div>
+        <div class="log" id="term">
+          <!-- <h3>Error Log:</h3> -->
+          <!-- <div id="log-data"></div> -->
+        </div>
+      </div>
+        <div class="configModal" id="configModal">
+          <div class="modal-wrapper">
+            <div class="modal-header">
+              <h2>Project Config Options</h2>
+            </div>
+            <div class="modal-body">
+              <div class="input-container">
+                <label class="config-label">Project Site Title:</label>
+                <input type="text" placeholder="Project Title" id="siteTitleInput" class="config-input"/>
+              </div>
+              <div class="input-container">
+                <label class="config-label">Project Site ID:</label>
+                <input type="text" placeholder="1234" id="siteIdInput" class="config-input"/>
+              </div>
+              <div class="input-container">
+                <label class="config-label">Project Site URL:</label>
+                <input type="text" placeholder="http://<projectname>.citewrench.com" id="siteUrlInput" class="config-input"/>
+              </div>
+              <div class="input-container">
+                <label class="config-label">JS Files to Concatenate:</label>
+                <input type="text" placeholder="file1.js,file2.js,etc.js" id="jsFilesInput" class="config-input"/>
+              </div>
+              <div class="input-container">
+                <label class="config-label">Git Commit Message:</label>
+                <input type="text" placeholder="Updates" id="gitMessageInput" class="config-input"/>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <div class="btn-container">
+                <button onclick="cancelConfig();" id="configCancelBtn">Cancel</button>
+                <button onclick="saveConfig();" id="configSaveBtn">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="functions.js"></script>
+    <script>setCurrentSites();</script>
+    <script src="server.js">
+    </script>
+    <script>
+    </script>
+  </body>
+</html>

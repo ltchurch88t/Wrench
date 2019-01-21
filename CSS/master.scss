@@ -1,0 +1,30 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto');
+
+// TACHYONS 4.7 //
+@import "external/tachyons";
+
+// BASE //
+@import "base/general";
+@import "base/reset";
+
+// COMPONENTS //
+@import "components/flex-nav";
+@import "components/sidecar";
+@import "components/search";
+// universal pieces under components
+@import "components/header";
+@import "components/footer";
+@import "components/sidebar";
+@import "components/term";
+
+// HELPERS //
+@import "helpers/mixins";
+
+// Main Pages //
+@import "pages/main";
+@import "pages/tasks";
+@import "pages/splash";
+
+// Import Animate CSS
+@import "external/animate"

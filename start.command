@@ -1,0 +1,1 @@
+cd Desktop/speak-dev-gui && npm start

@@ -1,0 +1,388 @@
+.tasks {
+  .modal-wrapper {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: -10px 0 25px 0 rgba(0,0,0,0.2);
+    background: $darkBlue;
+    padding-top: 4%;
+    h2 {
+      color: $white;
+    }
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin:15px auto;
+      label {
+        text-align: left;
+        color: $white;
+        margin-bottom: 5px;
+      }
+      input {
+        padding: 5px 10px;
+        border: none;
+      }
+    }
+    .btn-container {
+      button {
+        background: transparent;
+        border: 2px solid $white;
+        color: $white;
+        border-radius: 25px;
+        padding: 7px 20px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+          background: $white;
+          color: $darkBlue;
+        }
+      }
+    }
+  }
+  .configModal {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .display {
+    display: block;
+    z-index: 999999;
+  }
+
+    .main {
+        display: grid;
+        grid-template-areas: "sideNav siteContent";
+        grid-template-columns: 11% 89%;
+
+        .side-nav {
+          grid-area: sideNav;
+          display: flex;
+          flex-direction: column;
+          background: $darkBlue;
+          z-index:10;
+                .icon-container {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 auto;
+                    a {
+                        cursor: pointer;
+                        margin: 10px;
+                        height: 30px;
+                        width: 30px;
+                        &:hover {
+                            transform: scale(0.93);
+                        }
+                    }
+
+                    #download {
+                        background: url('images/pull.svg');
+                        background-size: 100%;
+                    }
+                    #upload {
+                        background: url('images/push.svg');
+                        background-size: 100%;
+                    }
+                    #trash {
+                        background: url('images/cache.svg') no-repeat;
+                        background-size: 100%;
+                    }
+                }
+
+          .nav-btn {
+              color: $white;
+              background: transparent;
+              text-align: center;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              align-items: center;
+              display: flex;
+              margin: 45px auto;
+              i {
+                margin: auto;
+                font-size: 1.3em;
+              }
+              &:hover {
+                background: white;
+                i {
+                  color: $sweetBlue;
+                }
+              }
+            }
+                .inputfile {
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    height: 0.1px;
+                    width: 0.1px;
+                }
+
+            .add-btn {
+              margin: 28px auto;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              background: $white;
+              display: flex;
+              cursor: pointer;
+              border: 2px solid $white;
+              transition: 0.3s ease;
+              position: absolute;
+              bottom: 0px;
+              left: 20px;
+              i {
+                margin: auto;
+                color: $sweetBlue;
+              }
+              &:hover {
+                background: transparent;
+                i {
+                  color: $white;
+                }
+              }
+            }
+        }
+
+        .sidebar {
+            background: $sweetBlue;
+            display: none;
+            flex-direction: column;
+            .sidebar-content {
+              margin-top: 25px;
+            }
+            .site-title {
+              color: $white;
+              padding-left: 1.4em;
+            }
+            .info-container {
+              color: $white;
+              div {
+                p {
+                  color: $white;
+                  margin: 0;
+                  padding: 0.5em 30px;
+                }
+                p:nth-of-type(1) {
+                  font-weight: bold;
+                  font-size: 1.1em;
+                }
+              }
+            }
+            
+            .logo {
+                height: auto;
+                width: 150px;
+                position: absolute;
+                bottom: 30px;
+                left: 10%;
+            }
+        }
+
+        .content {
+          background: $white;
+            grid-area: siteContent;
+            height: 100%;
+            display: grid;
+            grid-template-areas: "title"
+                                 "log";
+            grid-template-columns: 100%;
+            grid-template-rows: 20% 80%;
+
+            .log {
+              grid-area: log;
+              padding: 0;
+              h3 {
+                text-align: left;
+                color: $primary;
+              }
+              #log-data {
+                overflow: scroll;
+                text-align: left;
+                height: 80%;
+              }
+            }
+
+            .title-container {
+                grid-area: title;
+                border-bottom: 2px solid $sweetBlue;
+                width: 92%;
+                display: flex;
+                justify-content: space-between;
+                margin: auto 30px;
+
+                h1 {
+                    color: $primary;
+                }
+                .info-container {
+                  display: flex;
+                }
+                .icon-container {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100px;
+                  a {
+                    margin: auto;
+                    color: $darkBlue;
+                    cursor: pointer;
+                    background: transparent;
+                    border: none;
+                    &#start-btn {
+                      color: limegreen;
+                      position: relative;
+                      &::after {
+                        content: "Start Project";
+                        position: absolute;
+                        opacity: 0;
+                        top: -200%;
+                        left: -15px;
+                        font-size: 13px;
+                        color: #ddd;
+                      }
+                      &:hover {
+                        &::after {
+                          animation: 0.3s display forwards;
+                          animation-delay: 1s;
+                        }
+                      }
+                    }
+                    &#stop-btn {
+                       position: relative;
+                       color: lightgrey;
+                      &::after {
+                        content: "Stop Project";
+                        position: absolute;
+                        opacity: 0;
+                        top: -200%;
+                        left: -15px;
+                        font-size: 13px;
+                        color: #ddd;
+                      }
+                      &:hover {
+                        &::after {
+                          animation: 0.3s display forwards;
+                          animation-delay: 1s;
+                        }
+                      }
+                    }
+                    &#editConfig {
+                       position: relative;
+                      &::after {
+                        content: "Edit Config";
+                        position: absolute;
+                        opacity: 0;
+                        top: -200%;
+                        left: -15px;
+                        font-size: 13px;
+                        color: #ddd;
+                      }
+                      &:hover {
+                        &::after {
+                          animation: 0.3s display forwards;
+                          animation-delay: 1s;
+                        }
+                      }
+                    }
+                  }
+                }
+
+            }
+
+            .info-container {
+                grid-area: content;
+                display: flex;
+                flex-direction: column;
+                div {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    padding: 0 30px;
+                    p:nth-of-type(2) {
+                        margin-left: 15px;
+                    }
+                }
+
+                div:nth-of-type(odd) {
+                    background: $white;
+                }
+            }
+
+            .footer-container {
+                grid-area: footer;
+                border-top: 2px solid $white;
+                display: flex;
+                justify-content: space-between;
+                .btn-container {
+                  display: flex;
+                  justify-content: flex-end;
+                    text-align: right;
+                    button {
+                        cursor: pointer;
+                        border: none;
+                        background: transparent !important;
+                        margin: auto 10px;
+                        border-radius: 50%;
+                    }
+                    #editConfig {
+                      height: 35px;
+                     border-radius: 25px; 
+                     padding: 0 10px;
+                     border: 2px solid $darkBlue;
+                      &:hover {
+                        background: $darkBlue !important;
+                        color: $white;
+                      }
+                    }
+                    #start-btn {
+                      height: 40px;
+                      width: 40px;
+                      display: flex; 
+                      justify-content: center;
+                      i {
+                        margin: auto;
+                        color: $darkBlue;
+                        font-size: 1.4em;
+                      }
+                      &:hover {
+                        i {
+                          color: green!important;
+                        }
+                      }
+                    }
+                    #stop-btn {
+                      height: 40px;
+                      width: 40px;
+                      display: flex;
+                      justify-content: center;
+                      i {
+                        margin: auto;
+                        font-size: 1.4em;
+                        color: $darkBlue;
+                      }
+                      &:hover {
+                        i {
+                          color: red !important;
+                        }
+
+                      }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes display {
+  to {
+    opacity: 1;
+  }
+}

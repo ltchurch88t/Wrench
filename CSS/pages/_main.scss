@@ -1,0 +1,257 @@
+body {
+    background: white;
+    height: 100vh;
+
+    .main {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto';
+        img {
+            width: 50%;
+        }
+
+        .content {
+            width: 100%;
+            height: 110%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .input-container {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                .select-info {
+                    margin-top: 60px;
+                    font-size: 20px;
+                }
+
+                .inputfile {
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    height: 0.1px;
+                    width: 0.1px;
+                }
+
+                label {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $darkBlue;
+                    background: transparent;
+                    background-size: 200% 100%;
+                    background-position: right bottom;
+                    transition: all .3s ease-out;
+                    display: flex;
+                    margin: auto;
+                    // margin-top: 15px;
+                    padding: 15px;
+                    position: relative;
+                    text-align: left;
+                    svg {
+                      margin: auto;
+                    }
+                }
+                
+                label:hover {
+                  background: $darkBlue;
+                    color: $white;
+                }
+
+                label {
+                    cursor: pointer; /* "hand" cursor */
+                }
+                button {
+                    margin-top: 15px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #fff;
+                    background: $primary;
+                    transition: all .1s ease-out;
+                    display: inline-block;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: $white;
+                        color: darkgrey;
+                    }
+
+                    .a-btn {
+                        color: #fff;
+                        &:hover {
+                            color: darkgrey;
+                        }
+                    }
+
+                }
+            }
+        } 
+
+    }
+    .new-repo-container {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        button {
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $darkBlue;
+            background: transparent;
+            border: 2px solid $darkBlue;
+            transition: all .3s ease-out;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+
+            &:hover {
+                background: $darkBlue;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+#path-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    .modal-label {
+        text-align: center;
+        h3 {
+            color: $darkBlue;
+            font-size: 2rem;
+        }
+    }
+    .info {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        input {
+            width: 250px;
+            margin: auto;
+            text-align: center;
+            outline: none;
+
+            &:focus {
+                outline-color: none;
+                color: $darkBlue;
+            }
+        }
+    
+        button {
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            background: $primary;
+            transition: all .1s ease-out;
+            display: inline-block;
+            border: none;
+            padding: 5px 10px;
+            width: 105px;
+            margin: auto;
+            margin-top: 10px;
+    
+            &:hover {
+                cursor: pointer;
+                background: $white;
+                color: $darkBlue;
+            }
+        }
+    }
+}
+
+#repo-url-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    top: 0;
+    .nav-btn {
+        color: $darkBlue;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+        font-size: 1.5em;
+        border-radius: 50%;
+        height: 36px;
+        width: 36px;
+        display: flex;
+        i {
+          margin: auto;
+        }
+        &:hover {
+          background: $darkBlue;
+          i {
+            color: white;
+          }
+        }
+    }
+    h4 {
+      color: $darkBlue;
+      margin-bottom: 20px;
+    }
+    .container {
+        margin: auto;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        #repo-url {
+            width: 60%;
+            margin: auto;
+            padding: 5px 10px;
+            outline: none;
+            &:focus {
+                outline-color: none;
+                outline: none;
+                color: $darkBlue;
+            }
+        }
+    
+        button {
+            margin: auto;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            background: $darkBlue;
+            transition: all .1s ease-out;
+            display: inline-block;
+            border: 2px solid $darkBlue;
+            padding: 5px 10px;
+            width: 105px;
+            border-radius: 25px;
+            cursor: pointer;
+    
+            &:hover {
+                background: transparent;
+                color: $darkBlue;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}

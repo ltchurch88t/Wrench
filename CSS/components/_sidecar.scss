@@ -1,0 +1,333 @@
+
+
+/* ====================== Side Drawer Styling ====================== */
+
+#siteWrapper {
+  position: relative;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.body-overlay {
+  display: block;
+  cursor: col-resize;
+
+  // background: linear-gradient(30deg, #2e3192, #1bffff);
+  background: #888;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 9998;
+  visibility: hidden;
+  -webkit-transition: opacity .55s ease;
+  -o-transition: opacity .55s ease;
+  -moz-transition: opacity .55s ease;
+  -ms-transition: opacity .55s ease;
+  transition: opacity .55s ease;
+  -o-transition-delay: .44s !important;
+  -moz-transition-delay: .44s !important;
+  -webkit-transition-delay: .44s !important;
+  transition-delay: .44s !important;
+
+  &.active {
+    opacity: 0.6;
+    visibility: visible;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    -webkit-transition: opacity .55s ease;
+    -o-transition: opacity .55s ease;
+    -moz-transition: opacity .55s ease;
+    -ms-transition: opacity .55s ease;
+    transition: opacity .55s ease;
+    -o-transition-delay: .2s !important;
+    -moz-transition-delay: .2s !important;
+    -webkit-transition-delay: .2s !important;
+    transition-delay: .2s !important;
+  }
+}
+
+#siteWrapper {
+  position: relative;
+  background-color: #fff;
+}
+
+#sidecar {
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  // background: #f2f2f2;
+  background: linear-gradient(30deg, #e12012, #aa0b00);
+  top: 0;
+  right: -260px;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -o-transition: right .44s ease;
+  -moz-transition: right .44s ease;
+  -webkit-transition: right .44s ease;
+  transition: right .44s ease;
+  z-index: 99999 !important;
+
+  ul#mainnav {
+    right: 0px;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+/* Open & Close Button Placement and Speed */
+
+button {
+  &#drawer-toggle {
+    border: none;
+    background: none;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    .menu-text {
+      float: left;
+    }
+
+    img.menu-icon {
+      float: left;
+      width: 17px;
+      margin-left: 5px;
+      margin-top: 4px;
+    }
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &.close-drawer {
+    color: white;
+    right: -260px;
+    position: absolute;
+    -o-transition: right .44s ease;
+    -moz-transition: right .44s ease;
+    -webkit-transition: right .44s ease;
+    transition: right .44s ease;
+    background: url(images/x-dark.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    padding-right: 30px;
+    border: none;
+    background-size: 17px;
+    outline: none !important;
+    top: 10px;
+  }
+}
+
+/* Drawer Placement & Speed */
+
+.slide-right, .push-right, .over-right {
+  right: 0;
+  left: inherit;
+}
+
+.slide-right {
+  -webkit-transition: -webkit-transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+  -moz-transition: -moz-transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+  -ms-transition: -ms-transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+  -o-transition: -o-transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+}
+
+/* Slide Right */
+
+#sidecar.slide-right {
+  opacity: 1;
+  -o-transition: right .44s ease;
+  -moz-transition: right .44s ease;
+  -webkit-transition: right .44s ease;
+  transition: right .44s ease;
+
+  &.active {
+    opacity: 1;
+    right: 0px;
+    -o-transition: all .44s ease;
+    -moz-transition: all .44s ease;
+    -webkit-transition: all .44s ease;
+    transition: all .44s ease;
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.3);
+
+    /*ul#mainnav{
+        right:0px;
+        -o-transition: right .44s ease;
+      -moz-transition: right .44s ease;
+      -webkit-transition: right .44s ease;
+      transition: right .44s ease;
+      -o-transition-delay: .2s !important;
+      -moz-transition-delay: .2s !important;
+      -webkit-transition-delay: .2s !important;
+      transition-delay:.2s !important;
+      }*/
+
+    button.close-drawer.pull-right {
+      right: 5px;
+      -o-transition: right .44s ease;
+      -moz-transition: right .44s ease;
+      -webkit-transition: right .44s ease;
+      transition: right .44s ease;
+      -o-transition-delay: .6s !important;
+      -moz-transition-delay: .6s !important;
+      -webkit-transition-delay: .6s !important;
+      transition-delay: .6s !important;
+    }
+
+    ul#mainnav li a {
+      margin-left: 0px;
+      opacity: 1;
+    }
+  }
+}
+
+/* ====================== Side Drawer Styling END ====================== */
+/* Expand Collapse Styling */
+
+nav#sidecar ul#mainnav {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 30px 0 0 0;
+  background: transparent;
+  -webkit-padding-start: 0px;
+
+  li {
+    &:first-child a {
+      -o-transition-delay: .1s !important;
+      -moz-transition-delay: .1s !important;
+      -webkit-transition-delay: .1s !important;
+      transition-delay: .1s !important;
+    }
+
+    &:nth-child(2) a {
+      -o-transition-delay: .15s !important;
+      -moz-transition-delay: .15s !important;
+      -webkit-transition-delay: .15s !important;
+      transition-delay: .15s !important;
+    }
+
+    &:nth-child(3) a {
+      -o-transition-delay: .2s !important;
+      -moz-transition-delay: .2s !important;
+      -webkit-transition-delay: .2s !important;
+      transition-delay: .2s !important;
+    }
+
+    &:nth-child(4) a {
+      -o-transition-delay: .3s !important;
+      -moz-transition-delay: .3s !important;
+      -webkit-transition-delay: .3s !important;
+      transition-delay: .3s !important;
+    }
+
+    &:nth-child(5) a {
+      -o-transition-delay: .35s !important;
+      -moz-transition-delay: .35s !important;
+      -webkit-transition-delay: .35s !important;
+      transition-delay: .35s !important;
+    }
+
+    &:nth-child(6) a {
+      -o-transition-delay: .4s !important;
+      -moz-transition-delay: .4s !important;
+      -webkit-transition-delay: .4s !important;
+      transition-delay: .4s !important;
+    }
+
+    &:nth-child(7) a {
+      -o-transition-delay: .5s !important;
+      -moz-transition-delay: .5s !important;
+      -webkit-transition-delay: .5s !important;
+      transition-delay: .5s !important;
+    }
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: none;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    text-align: left;
+
+    &:hover ul {
+      display: block;
+    }
+
+    ul {
+      padding: 0 0 0 0px;
+      margin: 0;
+      display: block;
+      position: relative;
+      max-height: 0px;
+      overflow: hidden;
+      float: none;
+      transition: max-height 0.25s ease-in;
+      background: rgba(0, 0, 0, 0.2);
+
+      li a {
+        padding: 10px 0px 10px 25px;
+        border: none;
+      }
+
+      &.active {
+        display: block;
+        max-height: 500px;
+        float: none;
+        transition: max-height 0.44s ease-in;
+      }
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      padding: 8px 25px;
+      position: relative;
+      margin-left: 50px;
+      opacity: 0;
+      font-size: 18px;
+      -webkit-transition: all .44s ease;
+      -moz-transition: all .44s ease;
+      -o-transition: all .44s ease;
+      transition: all .44s ease;
+
+      &.expand {
+        display: block;
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: url('images/arrow-dark.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 50%;
+        padding: 16px;
+        cursor: pointer;
+        border: none;
+
+        &.active {
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+          border: none;
+        }
+      }
+    }
+  }
+}

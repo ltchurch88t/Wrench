@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Speak Dev Environment</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      <link href="CSS/master.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+    <div class="drag"></div>
+      <div class="main">
+        <div class="content">
+          <div class="logo-container">
+            <img class="logo" src="CSS/images/wrench.png" />
+          </div>
+          <div class="input-container">
+            <p class="select-info">Select a project directory:</p>
+            <label for="file-chooser"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></label>
+            <input type="file" name="file-chooser" onchange="setPath();" id="file-chooser" webkitdirectory class="inputfile" />
+          </div>
+          <div class="new-repo-container">
+            <button onclick="showRepoModal();">Add Project</button>
+          </div>
+        </div>
+      </div>
+      <div class="hidden" id="repo-url-modal">
+        <a class="nav-btn" onclick="back();" href="index.html"><i class="fa fa-angle-left"></i></a>
+        <div class='container'>
+          <h4>Enter Buddy URL for new repo: </h4>
+          <input type="text" id="repo-url" placeholder="Enter buddy url"/>
+          <button type="submit" onclick='cloneRepo();'>Clone</button>
+        </div>
+      </div>
+      <script src="functions.js"></script>
+    </body>
+  </html>
