@@ -15,4 +15,4 @@ In future releases the need to have commands run separately from the internal of
 
 This is only a mac application at the moment.
 
-This is intended for use with the [CMS: SiteWrench](sitewrench.com) built and maintained by [Speak Creative](madebyspeak.com)
+This is intended for use with the [CMS: SiteWrench](//sitewrench.com) built and maintained by [Speak Creative](//madebyspeak.com)
